@@ -5,9 +5,11 @@ import { LinkContainer } from "react-router-bootstrap";
 import Routes from "./Routes.tsx";
 import { AppContext, AppContextType } from "./lib/contextLib";
 import Nav from "react-bootstrap/Nav";
+import { useNavigate } from "react-router-dom";
 import "./App.css";
 
 function App() {
+  const nav = useNavigate();
   const [isAuthenticating, setIsAuthenticating] = useState(true);
   const [isAuthenticated, userHasAuthenticated] = useState(false);
 
@@ -33,6 +35,8 @@ function App() {
     await Auth.signOut();
     
     userHasAuthenticated(false);
+
+    nav("/login");
   }
 
   return (
