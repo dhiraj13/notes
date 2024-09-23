@@ -6,6 +6,7 @@ import Notes from "./containers/Notes.tsx";
 import Signup from "./containers/Signup.tsx";
 import NewNote from "./containers/NewNote.tsx";
 import NotFound from "./containers/NotFound.tsx";
+import Settings from "./containers/Settings.tsx";
 
 export default function Links() {
   return (
@@ -14,8 +15,9 @@ export default function Links() {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/notes/new" element={<NewNote />} />
-      <Route path="*" element={<NotFound />} />;
       <Route path="/notes/:id" element={<Notes />} />
+      <Route path="/settings" element={<Settings />} />
+      <Route path="*" element={<NotFound />} />;
     </Routes>
   );
 }
